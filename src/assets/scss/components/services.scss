@@ -1,0 +1,104 @@
+.services {
+	span {
+		display: flex;
+		align-items: center;
+	}
+	&__title {
+		margin-left: auto;
+		font-weight: 400;
+	}
+	&__name, &__total {
+		width: 75%;
+		padding-left: 5px;
+	}
+	&__title, &__result, &__amount {
+		width: 25%;
+		word-break: inherit;
+	}
+	&__title, &__result, &__amount {
+		justify-content: center;
+	}
+	&__result, &__total, &__amount {
+		font-weight: 700;
+	}
+	&__name, &__result, &__title {
+		font-size: rem(13);
+	}
+	&__head {
+		padding-bottom: 10px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid $gray-light;
+	}
+	&__foot {
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid $gray-light;
+	}
+	&__info {
+		--interest: 20%;
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 25px;
+		margin-bottom: 5px;
+		&:nth-child(2) {
+			&:after {
+				background: $green;
+			}
+		}
+		&:nth-child(n + 3) {
+			&:after {
+				background: $blue;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: var(--interest);
+			height: 100%;
+			z-index: -2;
+			border-radius: 0 3px 3px 0;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1px;
+			height: calc(100% + 5px);
+			background: $gray-light;
+			z-index: -1;
+		}
+		&--last:before {
+			height: 100%;
+		}
+	}
+}
+
+@include min(420px) {
+	.services {
+		&__name, &__result, &__title {
+			font-size: rem(15);
+		}
+	}
+}
+
+@include min(768px) {
+	.services {
+		&__info {
+			height: 30px;
+			margin-bottom: 8px;
+			&:before {
+				height: calc(100% + 8px);
+			}
+			&--last:before {
+				height: 100%;
+			}
+		}
+	}
+}
