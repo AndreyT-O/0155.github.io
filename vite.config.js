@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
-  publicPath: process.env.NODE_ENV === "production" ? "/0155.github.io/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/0155.github.io/" : "/",
   plugins: [
     vue(), 
     vueJsx(),
