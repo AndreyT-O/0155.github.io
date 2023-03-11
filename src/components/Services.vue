@@ -16,7 +16,8 @@
         </li>
         <li 
             class="services__info" 
-            v-for="(data, index) of items" 
+            v-for="(data, index) of items"
+            :class="{'services__info--last': index === Object.keys(items).length - 1}" 
             :key="index"
             :style="{'--interest': data.interest + '%'}"
             >
