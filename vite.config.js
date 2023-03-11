@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
-  publicPath: '0155.github.io.git',
+  publicPath: '/0155.github.io/',
   plugins: [
     vue(), 
     vueJsx(),
