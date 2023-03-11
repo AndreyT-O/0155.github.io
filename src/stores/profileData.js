@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
 export const useProfileData = defineStore('profileData', () => {
-    const info = {
+    const info = ref({
         profile: './img/profile.jpeg',
         name: 'Eva Jonson',
         position: 'Sales Manager',
@@ -50,7 +51,7 @@ export const useProfileData = defineStore('profileData', () => {
                 }
             ]
         }
-    };
+    });
 
     return { info }
 })
